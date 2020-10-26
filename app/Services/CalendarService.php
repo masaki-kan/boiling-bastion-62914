@@ -3,7 +3,6 @@
 namespace App\Services;
 
 use Carbon\Carbon;
-use App\Models\Image;
 use App\Http\Controllers;
 
 class CalendarService
@@ -15,7 +14,6 @@ class CalendarService
      */
     public function getWeeks()
     {
-      $images = Image::whereDay('created_at' , 'd')->get();
         $weeks = [];
         $week = '';
 
