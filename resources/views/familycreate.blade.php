@@ -16,7 +16,7 @@
 <div class="list_img">
   @if( $create->grandfather_img )
 <label for="grandfather_img">
-  <img class="img-thumbnail" src="{{ asset('storage/user/'. $create->grandfather_img) }}"></label>
+  <img class="img-thumbnail" src="{{ $create->grandfather_img_path }}"></label>
 @else
 <label for="grandfather_img"><img class="img-thumbnail" src="{{ asset('/sample_images/user_icon.png') }}"></label>
 @endif
@@ -35,7 +35,7 @@
 <div class="list_img">
   @if( $create->grandmother_img )
 <label for="grandmother_img">
-  <img class="img-thumbnail" src="{{ asset('storage/user/'. $create->grandmother_img) }}"></label>
+  <img class="img-thumbnail" src="{{ $create->grandmother_img_path }}"></label>
 @else
 <label for="grandmother_img"><img class="img-thumbnail" src="{{ asset('/sample_images/user_icon.png') }}"></label>
 @endif
@@ -54,7 +54,7 @@
 <div class="list_img">
   @if( $create->father_img )
 <label for="father_img">
-  <img class="img-thumbnail" src="{{ asset('storage/user/'. $create->father_img) }}"></label>
+  <img class="img-thumbnail" src="{{ $create->father_img_path }}"></label>
 @else
 <label for="father_img"><img class="img-thumbnail" src="{{ asset('/sample_images/user_icon.png') }}"></label>
 @endif
@@ -73,7 +73,7 @@
 <div class="list_img">
   @if( $create->mother_img )
 <label for="mother_img">
-  <img class="img-thumbnail" src="{{ asset('storage/user/'. $create->mother_img) }}"></label>
+  <img class="img-thumbnail" src="{{ $create->mother_img_path }}"></label>
 @else
 <label for="mother_img"><img class="img-thumbnail" src="{{ asset('/sample_images/user_icon.png') }}"></label>
 @endif
@@ -92,7 +92,7 @@
 <div class="list_img">
   @if( $create->son_first_man_img )
   <label for="son_first_man_img">
-    <img class="img-thumbnail" src="{{ asset('storage/user/'. $create->son_first_man_img) }}"></label>
+    <img class="img-thumbnail" src="{{ $create->son_first_man_img_path }}"></label>
   @else
   <label for="son_first_man_img"><img class="img-thumbnail" src="{{ asset('/sample_images/user_icon.png') }}"></label>
   @endif
@@ -111,7 +111,7 @@
 <div class="list_img">
   @if( $create->son_first_woman_img )
 <label for="son_first_woman_img">
-  <img class="img-thumbnail" src="{{ asset('storage/user/'. $create->son_first_woman_img) }}">
+  <img class="img-thumbnail" src="{{ $create->son_first_woman_img_path }}">
   @else
   <label for="son_first_woman_img"><img class="img-thumbnail" src="{{ asset('/sample_images/user_icon.png') }}"></label>
   @endif
@@ -130,7 +130,7 @@
 <div class="list_img">
   @if( $create->son_second_man_img )
 <label for="son_second_man_img">
-  <img class="img-thumbnail" src="{{ asset('storage/user/'. $create->son_second_man_img) }}"></label>
+  <img class="img-thumbnail" src="{{ $create->son_second_man_img_path }}"></label>
   @else
   <label for="son_second_man_img"><img class="img-thumbnail" src="{{ asset('/sample_images/user_icon.png') }}"></label>
   @endif
@@ -149,7 +149,7 @@
 <div class="list_img">
   @if( $create->son_second_woman_img )
 <label for="son_second_woman_img">
-  <img class="img-thumbnail" src="{{ asset('storage/user/'. $create->son_second_woman_img) }}"></label>
+  <img class="img-thumbnail" src="{{ $create->son_second_woman_img_path }}"></label>
 @else
 <label for="son_second_woman_img"><img class="img-thumbnail" src="{{ asset('/sample_images/user_icon.png') }}"></label>
 @endif
@@ -168,7 +168,7 @@
 <div class="list_img">
   @if( $create->son_third_man_img )
 <label for="son_third_man_img">
-  <img class="img-thumbnail" src="{{ asset('storage/user/'. $create->son_third_man_img) }}"></label>
+  <img class="img-thumbnail" src="{{ $create->son_third_man_img_path }}"></label>
 @else
 <label for="son_third_man_img"><img class="img-thumbnail" src="{{ asset('/sample_images/user_icon.png') }}"></label>
 @endif
@@ -187,7 +187,7 @@
 <div class="list_img">
   @if( $create->son_third_woman_img )
 <label for="son_third_woman_img">
-  <img class="img-thumbnail" src="{{ asset('storage/user/'. $create->son_third_woman_img) }}"></label>
+  <img class="img-thumbnail" src="{{ $create->son_third_woman_img_path }}"></label>
 @else
 <label for="son_third_woman_img"><img class="img-thumbnail" src="{{ asset('/sample_images/user_icon.png') }}"></label>
 @endif

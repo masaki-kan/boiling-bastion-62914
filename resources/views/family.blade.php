@@ -5,7 +5,7 @@
 <div class="user">
 <div class="user_image">
 @if( $user->img_name )
-<img class="img-thumbnail" src="{{ asset('storage/user_images/'. $user->img_name) }}">
+<img class="img-thumbnail" src="{{ $user->img_name_path }}">
 @else
 <label for="img_name"><img class="img-thumbnail" src="{{ asset('/sample_images/user_icon.png') }}"></label>
 @endif
@@ -38,7 +38,7 @@
 <div class="family_list">
 <div class="list_img">
     @if( $names->grandfather_img )
-  <img class="img-thumbnail" src="{{ asset('storage/user/'. $names->grandfather_img) }}">
+  <img class="img-thumbnail" src="{{ $names->grandfather_img_path }}">
   @else
   <img class="img-thumbnail" src="{{ asset('/sample_images/user_icon.png') }}">
   @endif
@@ -54,7 +54,7 @@
 <div class="family_list">
 <div class="list_img">
       @if( $names->grandmother_img )
-  <img class="img-thumbnail" src="{{ asset('storage/user/'. $names->grandmother_img) }}">
+  <img class="img-thumbnail" src="{{ $names->grandmother_img_path }}">
   @else
   <img class="img-thumbnail" src="{{ asset('/sample_images/user_icon.png') }}">
   @endif
@@ -70,7 +70,7 @@
 <div class="family_list">
 <div class="list_img">
         @if( $names->father_img )
-  <img class="img-thumbnail" src="{{ asset('storage/user/'. $names->father_img) }}">
+  <img class="img-thumbnail" src="{{ $names->father_img_path }}">
   @else
   <img class="img-thumbnail" src="{{ asset('/sample_images/user_icon.png') }}">
   @endif
@@ -86,7 +86,7 @@
 <div class="family_list">
 <div class="list_img">
           @if( $names->mother_img )
-  <img class="img-thumbnail" src="{{ asset('storage/user/'. $names->mother_img) }}">
+  <img class="img-thumbnail" src="{{ $names->mother_img_path }}">
   @else
   <img class="img-thumbnail" src="{{ asset('/sample_images/user_icon.png') }}">
   @endif
@@ -102,7 +102,7 @@
 <div class="family_list">
 <div class="list_img">
     @if( $names->son_first_man_img )
-  <img class="img-thumbnail" src="{{ asset('storage/user/'. $names->son_first_man_img) }}">
+  <img class="img-thumbnail" src="{{ $names->son_first_man_img_path }} ">
   @else
   <img class="img-thumbnail" src="{{ asset('/sample_images/user_icon.png') }}">
   @endif
@@ -118,7 +118,7 @@
 <div class="family_list">
 <div class="list_img">
   @if( $names->son_first_woman_img )
-  <img class="img-thumbnail" src="{{ asset('storage/user/'. $names->son_first_woman_img) }}">
+  <img class="img-thumbnail" src="{{ names->son_first_woman_img_path }}">
   @else
   <img class="img-thumbnail" src="{{ asset('/sample_images/user_icon.png') }}">
   @endif
@@ -134,7 +134,7 @@
 <div class="family_list">
 <div class="list_img">
   @if( $names->son_second_man_img )
-  <img class="img-thumbnail" src="{{ asset('storage/user/'. $names->son_second_man_img) }}">
+  <img class="img-thumbnail" src="{{ $names->son_second_man_img_path }}">
   @else
   <img class="img-thumbnail" src="{{ asset('/sample_images/user_icon.png') }}">
   @endif
@@ -150,7 +150,7 @@
 <div class="family_list">
 <div class="list_img">
     @if( $names->son_second_woman_img )
-  <img class="img-thumbnail" src="{{ asset('storage/user/'. $names->son_second_woman_img) }}">
+  <img class="img-thumbnail" src="{{ $names->son_second_woman_img_path }}">
   @else
   <img class="img-thumbnail" src="{{ asset('/sample_images/user_icon.png') }}">
   @endif
@@ -166,7 +166,7 @@
 <div class="family_list">
 <div class="list_img">
   @if( $names->son_third_man_img )
-<img class="img-thumbnail" src="{{ asset('storage/user/'. $names->son_third_man_img) }}">
+<img class="img-thumbnail" src="{{ $names->son_third_man_img_path }}">
 @else
 <img class="img-thumbnail" src="{{ asset('/sample_images/user_icon.png') }}">
 @endif
@@ -182,7 +182,7 @@
 <div class="family_list">
 <div class="list_img">
     @if( $names->son_third_woman_img )
-<img class="img-thumbnail" src="{{ asset('storage/user/'. $names->son_third_woman_img) }}">
+<img class="img-thumbnail" src="{{ $names->son_third_woman_img_path }}">
 @else
 <img class="img-thumbnail" src="{{ asset('/sample_images/user_icon.png') }}">
 @endif

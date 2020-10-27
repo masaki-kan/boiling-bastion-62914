@@ -2,7 +2,7 @@
 @section('content')
 <div class="sp_content">
   <span>{{ $images->created_at }}</span>
-  <img src="{{ asset('storage/images/'. $images->file) }}" class="img-thumbnail">
+  <img src="{{ $images->file_path }}" class="img-thumbnail">
 </div>
 @if( isset( $images->title ) )
 <div class="sp_content">
