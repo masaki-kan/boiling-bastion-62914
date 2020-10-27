@@ -306,7 +306,7 @@ class IndexController extends Controller
       //ユーザーid_ファイル名.拡張子で保存
       $request->file('grandfather_img')->storeAs('public/user', $fileNameToStore);
       //webにupするときはこっち
-      $name->grandfather_img = $fileNameToStore;
+      $updata->grandfather_img = $fileNameToStore;
       $updata->grandfather_img_path = $data_url;
       //$updata->grandfather_img = $fileNameToStore;
     }
@@ -318,7 +318,7 @@ class IndexController extends Controller
       //ユーザーid_ファイル名.拡張子で保存
       $request->file('grandmother_img')->storeAs('public/user', $fileNameToStore);
       //webにupするときはこっち
-      $name->grandmother_img = $fileNameToStore;
+      $updata->grandmother_img = $fileNameToStore;
       $updata->grandmother_img_path = $data_url;
       //$updata->grandmother_img = $fileNameToStore;
     }
@@ -330,7 +330,7 @@ class IndexController extends Controller
       //ユーザーid_ファイル名.拡張子で保存
       $request->file('father_img')->storeAs('public/user', $fileNameToStore);
       //webにupするときはこっち
-      $name->father_img = $fileNameToStore;
+      $updata->father_img = $fileNameToStore;
       $updata->father_img_path = $data_url;
       //$updata->father_img = $fileNameToStore;
     }
@@ -342,7 +342,7 @@ class IndexController extends Controller
       //ユーザーid_ファイル名.拡張子で保存
       $request->file('mother_img')->storeAs('public/user', $fileNameToStore);
       //webにupするときはこっち
-      $name->mother_img = $fileNameToStore;
+      $updata->mother_img = $fileNameToStore;
       $updata->mother_img_path = $data_url;
       //$updata->mother_img = $fileNameToStore;
     }
@@ -354,7 +354,7 @@ class IndexController extends Controller
       //ユーザーid_ファイル名.拡張子で保存
       $request->file('son_first_man_img')->storeAs('public/user', $fileNameToStore);
       //webにupするときはこっち
-      $name->son_first_man_img = $fileNameToStore;
+      $updata->son_first_man_img = $fileNameToStore;
       $updata->son_first_man_img_path = $data_url;
       //$updata->son_first_man_img = $fileNameToStore;
     }
@@ -366,7 +366,7 @@ class IndexController extends Controller
       //ユーザーid_ファイル名.拡張子で保存
       $request->file('son_first_woman_img')->storeAs('public/user', $fileNameToStore);
       //webにupするときはこっち
-      $name->son_first_woman_img = $fileNameToStore;
+      $updata->son_first_woman_img = $fileNameToStore;
       $updata->son_first_woman_img_path = $data_url;
       //$updata->son_first_woman_img = $fileNameToStore;
     }
@@ -378,7 +378,7 @@ class IndexController extends Controller
       //ユーザーid_ファイル名.拡張子で保存
       $request->file('son_second_man_img')->storeAs('public/user', $fileNameToStore);
       //webにupするときはこっち
-      $name->son_second_man_img = $fileNameToStore;
+      $updata->son_second_man_img = $fileNameToStore;
       $updata->son_second_man_img_path = $data_url;
       //$updata->son_second_man_img = $fileNameToStore;
     }
@@ -390,7 +390,7 @@ class IndexController extends Controller
       //ユーザーid_ファイル名.拡張子で保存
       $request->file('son_second_woman_img')->storeAs('public/user', $fileNameToStore);
       //webにupするときはこっち
-      $name->son_second_woman_img = $fileNameToStore;
+      $updata->son_second_woman_img = $fileNameToStore;
       $updata->son_second_woman_img_path = $data_url;
       //$updata->son_second_woman_img = $fileNameToStore;
     }
@@ -401,7 +401,7 @@ class IndexController extends Controller
       //ユーザーid_ファイル名.拡張子で保存
       $request->file('son_third_man_img')->storeAs('public/user', $fileNameToStore);
       //webにupするときはこっち
-      $name->son_third_man_img = $fileNameToStore;
+      $updata->son_third_man_img = $fileNameToStore;
       $updata->son_third_man_img_path = $data_url;
       //$updata->son_third_man_img = $fileNameToStore;
     }
@@ -413,7 +413,7 @@ class IndexController extends Controller
       //ユーザーid_ファイル名.拡張子で保存
       $request->file('son_third_woman_img')->storeAs('public/user', $fileNameToStore);
       //webにupするときはこっち
-      $name->son_third_woman_img = $fileNameToStore;
+      $updata->son_third_woman_img = $fileNameToStore;
       $updata->son_third_woman_img_path = $data_url;
       //$updata->son_third_woman_img = $fileNameToStore;
     }
