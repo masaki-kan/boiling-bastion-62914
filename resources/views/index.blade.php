@@ -14,7 +14,7 @@
     @foreach( $images as $image )
     @if( $image->user_id === Auth::user()->id )
     <li>
-      <a href="{{ route('createpage' , $image->id ) }}"><img class="img-thumbnail" src="{{ asset('storage/images/'. $image->file) }}">
+      <a href="{{ route('createpage' , $image->id ) }}"><img class="img-thumbnail" src="{{ asset('storage/images/'. $image->file_path) }}">
       <span>{{ $image->title }}</span></a></li>
     @endif
     @endforeach
@@ -29,7 +29,7 @@
   @if( $image->user_id === Auth::user()->id )
   <div class="list">
     <p>
-      <a href="{{ route('createpage' , $image->id ) }}"><img class="img-thumbnail" src="{{ asset('storage/images/'. $image->file) }}">
+      <a href="{{ route('createpage' , $image->id ) }}"><img class="img-thumbnail" src="{{ asset('storage/images/'. $image->file_path) }}">
       <span>{{ $image->title }}</span></a></p>
   </div>
   @endif

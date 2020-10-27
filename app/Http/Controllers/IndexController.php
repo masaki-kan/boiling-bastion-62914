@@ -71,7 +71,7 @@ class IndexController extends Controller
         list( $image_fileName , $data_url ) = $inputImage ;
         $request->file('file')->storeAs( '/public/images' , $image_fileName );
         //webにupするときはこっち
-        $images->file = $data_url;
+        $images->file = $image_fileName;
         //$images->file = $image_fileName;
         $images->file_path = $data_url;
         $images->save();
