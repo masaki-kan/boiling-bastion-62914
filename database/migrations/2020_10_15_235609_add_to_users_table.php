@@ -15,7 +15,7 @@ class AddToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
-            $table->string('img_name')->nullable();
+            $table->longText('img_name')->nullable();
             $table->longText('img_name_path')->nullable();
         });
     }

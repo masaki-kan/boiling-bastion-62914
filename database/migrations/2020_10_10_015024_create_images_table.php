@@ -17,7 +17,7 @@ class CreateImagesTable extends Migration
             $table->id();
             $table->integer('user_id');
             $table->string('title')->nullable();
-            $table->string('file')->nullable();
+            $table->longText('file')->nullable();
             $table->longText('file_path')->nullable();
             $table->string('grandfather')->nullable();
             $table->string('grandmother')->nullable();
