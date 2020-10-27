@@ -118,7 +118,7 @@
 <div class="family_list">
 <div class="list_img">
   @if( $names->son_first_woman_img )
-  <img class="img-thumbnail" src="{{ names->son_first_woman_img_path }}">
+  <img class="img-thumbnail" src="{{ $names->son_first_woman_img_path }}">
   @else
   <img class="img-thumbnail" src="{{ asset('/sample_images/user_icon.png') }}">
   @endif
