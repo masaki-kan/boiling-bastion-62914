@@ -28,6 +28,17 @@
 
 </head>
 <body>
+  <!-- ローディング画面 -->
+  <div id="loading">
+    <div class="spinner"></div>
+    <div class="text">loading</div>
+  </div>
+  <script type="text/javascript">
+  window.onload = function() {
+    const spinner = document.getElementById('loading');
+    spinner.classList.add('loaded');
+  }
+  </script>
     <div id="app">
 <header>
   <div class="header">

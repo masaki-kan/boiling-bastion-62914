@@ -1,0 +1,46 @@
+/* ローディング画面 */
+#loading {
+  width: 100vw;
+  height: 100vh;
+  transition: all 1s;
+  background-color: #ffd7b9;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  .text{
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    animation: text 1s infinite ;
+    @keyframes  text {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+  .spinner {
+    width: 100px;
+    height: 100px;
+    margin: 200px auto;
+    background-color: #fff;
+    border-radius: 100%;
+    animation: sk-scaleout 1.0s infinite ease-in-out;
+    /* ローディングアニメーション */
+    @keyframes sk-scaleout {
+      0% {
+        transform: scale(0);
+      } 100% {
+        transform: scale(1.0);
+        opacity: 0;
+      }
+    }
+  }
+  .loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+}
