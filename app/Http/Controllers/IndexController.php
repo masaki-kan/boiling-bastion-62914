@@ -16,6 +16,7 @@ use App\Services\ImageUploadServise;
 use Illuminate\Support\Facades\Validator;
 use App\Facades\Calendar;
 use App\Services\CalendarService;
+use InterventionImage;
 
 class IndexController extends Controller
 {
@@ -69,7 +70,8 @@ class IndexController extends Controller
         $image = $request->file;
         $inputImage = imageUploadServise::inputSelect($image);
         list( $image_fileName , $data_url ) = $inputImage ;
-        $request->file('file')->storeAs( '/public/images' , $image_fileName );
+        $resizeImage = InterventionImage::make($data_url);
+        $resizeImage->resize( 300 , 300 )->save( public_path('/images/' . $image_fileName) );
         //webにupするときはこっち
         $images->file = $image_fileName;
         $images->file_path = $data_url;
