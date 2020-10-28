@@ -45,35 +45,31 @@
         <div id="footer">
           <ul>
             <li><a href="{{ route('home') }}"><i class="fas fa-images"></i><label >アルバム</label></a></li>
+            @if( request()->url() === route('home') )
             <li><a href="">
               <!--現在のurlとコントローラーパラメーターを判定-->
-              @if( request()->url() === route('home') )
               <i class="fas fa-image"></i><label for="file">選択</label>
-              @else
-              <i class="fas fa-image" onclick="return confirm('このページで操作できません。')"></i>選択
-              @endif
               <form action="{{ route('image_up') }}" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
               <input type="hidden" name="user_id" value="Auth::user()->id" style="display: none;">
               </form>
               </a>
             </li>
+            @endif
+            @if( request()->url() === route('home') )
           <li>
             <a href="">
           <!--現在のurlとコントローラーパラメーターを判定-->
-            @if( request()->url() === route('home') )
             <i class="fas fa-folder-plus"></i><label for="submit">追加</label>
-            @else
-            <i class="fas fa-folder-plus" onclick="return confirm('このページで操作できません。')"></i>追加
-            @endif
+            </a>
             <form action="{{ route('image_up') }}" method="post" enctype="multipart/form-data">
               {{ csrf_field() }}
               <input type="file" name="file" id="file" value="{{ old('file') }}" style="display: none;">
 
             <input type="submit" id="submit" style="display: none;">
             </form>
-            </a>
           </li>
+            @endif
             <li>
               <a href="{{ route('family' , Auth::user()->id ) }}"><i class="fas fa-user-cog"></i>家族構成</a>
             </li>
