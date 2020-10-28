@@ -44,32 +44,35 @@
     <div class="">
         <div id="footer">
           <ul>
-            <li><a href="{{ route('home') }}"><i class="fas fa-images"></i>アルバム</a></li>
-            <li>
+            <li><a href="{{ route('home') }}"><i class="fas fa-images"></i><label >アルバム</label></a></li>
+            <li><a href="">
               <!--現在のurlとコントローラーパラメーターを判定-->
               @if( request()->url() === route('home') )
+              <i class="fas fa-image"></i><label for="file">選択</label>
+              @else
+              <i class="fas fa-image" onclick="return confirm('このページで操作できません。')"></i>選択
+              @endif
               <form action="{{ route('image_up') }}" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
               <input type="hidden" name="user_id" value="Auth::user()->id" style="display: none;">
-              <a href=""><i class="fas fa-image"></i><label for="file">選択</label></a>
               </form>
-              @else
-              <a href="" onclick="return confirm('このページで操作できません。')"><i class="fas fa-image"></i>選択</a>
-              @endif
+              </a>
             </li>
           <li>
+            <a href="">
           <!--現在のurlとコントローラーパラメーターを判定-->
             @if( request()->url() === route('home') )
-              <form action="{{ route('image_up') }}" method="post" enctype="multipart/form-data">
-                {{ csrf_field() }}
-                <input type="file" name="file" id="file" value="{{ old('file') }}" style="display: none;">
-                <a href=""><i class="fas fa-folder-plus"></i><label for="submit">追加</label></a>
-              <input type="submit" id="submit" style="display: none;">
-              </a>
-              </form>
+            <i class="fas fa-folder-plus"></i><label for="submit">追加</label>
             @else
-            <a href="" onclick="return confirm('このページで操作できません。')"><i class="fas fa-folder-plus"></i>追加</a>
+            <i class="fas fa-folder-plus" onclick="return confirm('このページで操作できません。')"></i>追加
             @endif
+            <form action="{{ route('image_up') }}" method="post" enctype="multipart/form-data">
+              {{ csrf_field() }}
+              <input type="file" name="file" id="file" value="{{ old('file') }}" style="display: none;">
+
+            <input type="submit" id="submit" style="display: none;">
+            </form>
+            </a>
           </li>
             <li>
               <a href="{{ route('family' , Auth::user()->id ) }}"><i class="fas fa-user-cog"></i>家族構成</a>

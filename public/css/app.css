@@ -10951,20 +10951,15 @@ a.text-dark:focus {
   footer #footer ul {
     display: flex;
     list-style: none;
-    padding: 10px 0 0 0;
+    padding: 15px 0 5px;
     margin: 0;
     width: 100%;
     background: #FFE4CF;
+    box-shadow: inset -1px 1px 11px 3px #04040429;
   }
 
   footer #footer ul li {
     width: 20%;
-    padding-top: 5px;
-    border-right: 1px solid #fff;
-  }
-
-  footer #footer ul li:last-child {
-    border-right: none;
   }
 
   footer #footer ul li a {
