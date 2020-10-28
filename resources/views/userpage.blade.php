@@ -9,7 +9,7 @@
     <input type="hidden" name="id" value="{{ $user->id }}" style="display:none;">
   <div class="list_img">
   @if( $user->img_name )
-    <label for="img_name"><img class="img-thumbnail" src="{{ asset('storage/user_images/'. $user->img_name ) }}"></label>
+    <label for="img_name"><img class="img-thumbnail" src="{{ $user->img_name_path }}"></label>
     @else
     <label for="img_name"><img class="img-thumbnail" src="{{ asset('/sample_images/user_icon.png') }}"></label>
   @endif
