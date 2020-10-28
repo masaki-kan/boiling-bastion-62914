@@ -34,10 +34,21 @@
     <div class="text">loading</div>
   </div>
   <script type="text/javascript">
-  window.onload = function() {
-    const spinner = document.getElementById('loading');
-    spinner.classList.add('loaded');
-  }
+  $(window).on('load',function(){
+    endLoading();
+  });
+  //ローディング非表示処理
+function endLoading(){
+  const tm = 3000;
+  const tm2 = 800;
+  const spinner = document.getElementById('loading');
+  // 1秒かけてロゴを非表示にし、その後0.8秒かけて背景を非表示にする
+  $('#loading').fadeOut(tm, function(){
+    $('#loading').fadeOut(tm2);
+  });
+}
+
+
   </script>
     <div id="app">
 <header>

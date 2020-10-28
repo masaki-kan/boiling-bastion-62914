@@ -1,5 +1,11 @@
+/* ローディング後の処理 */
+.loaded {
+opacity: 0;
+visibility: hidden;
+}
 /* ローディング画面 */
 #loading {
+
   width: 100vw;
   height: 100vh;
   transition: all 1s;
@@ -38,10 +44,6 @@
         opacity: 0;
       }
     }
-    .loaded {
-    opacity: 0;
-    visibility: hidden;
-  }
   }
 
 }

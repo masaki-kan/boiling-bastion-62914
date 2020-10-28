@@ -11744,6 +11744,13 @@ label {
   }
 }
 
+/* ローディング後の処理 */
+
+.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+
 /* ローディング画面 */
 
 #loading {
@@ -11816,10 +11823,5 @@ label {
     transform: scale(1);
     opacity: 0;
   }
-}
-
-#loading .loaded {
-  opacity: 0;
-  visibility: hidden;
 }
 
