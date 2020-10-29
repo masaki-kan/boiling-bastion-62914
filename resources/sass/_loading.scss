@@ -18,7 +18,7 @@ visibility: hidden;
     text-align: center;
     font-size: 15px;
     font-weight: bold;
-    animation: text 1s infinite ;
+    animation: text 0.8s infinite ;
     @keyframes  text {
       0% {
         opacity: 0;
@@ -29,18 +29,19 @@ visibility: hidden;
     }
   }
   .spinner {
-    width: 100px;
-    height: 100px;
-    margin: 200px auto;
+    width: 150px;
+    height: 150px;
+    margin: 250px auto;
     background-color: #fff;
     border-radius: 100%;
-    animation: sk-scaleout 1.0s infinite ease-in-out;
+    animation: sk-scaleout 1.0s infinite;
     /* ローディングアニメーション */
     @keyframes sk-scaleout {
       0% {
         transform: scale(0);
-      } 100% {
-        transform: scale(1.0);
+      }
+      100% {
+        transform: scale(1.5);
         opacity: 0;
       }
     }

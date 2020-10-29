@@ -11768,8 +11768,8 @@ label {
   text-align: center;
   font-size: 15px;
   font-weight: bold;
-  -webkit-animation: text 1s infinite;
-          animation: text 1s infinite;
+  -webkit-animation: text 0.8s infinite;
+          animation: text 0.8s infinite;
 }
 
 @-webkit-keyframes text {
@@ -11793,13 +11793,13 @@ label {
 }
 
 #loading .spinner {
-  width: 100px;
-  height: 100px;
-  margin: 200px auto;
+  width: 150px;
+  height: 150px;
+  margin: 250px auto;
   background-color: #fff;
   border-radius: 100%;
-  -webkit-animation: sk-scaleout 1s infinite ease-in-out;
-          animation: sk-scaleout 1s infinite ease-in-out;
+  -webkit-animation: sk-scaleout 1s infinite;
+          animation: sk-scaleout 1s infinite;
   /* ローディングアニメーション */
 }
 
@@ -11809,7 +11809,7 @@ label {
   }
 
   100% {
-    transform: scale(1);
+    transform: scale(1.5);
     opacity: 0;
   }
 }
@@ -11820,7 +11820,7 @@ label {
   }
 
   100% {
-    transform: scale(1);
+    transform: scale(1.5);
     opacity: 0;
   }
 }
