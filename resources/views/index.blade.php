@@ -1,10 +1,10 @@
 @extends('layouts.header')
 @section('content')
-<div class="user">
+<!--<div class="user">
 <div class="user_image">
 <img class="img-thumbnail" src="{{ asset('/sample_images/logo.png') }}">
 </div>
-</div>
+</div>-->
 @include('include.calendar')
 <div class="image_list sp">
   @if( $errors->has( 'file' ) )
