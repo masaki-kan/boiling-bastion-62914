@@ -50,6 +50,6 @@
 @endif
 </form>
 <div class="button_area">
-<button style="display:block;"><a href="{{ route('delete' , $images->id ) }}">削除</a></button>
+<button style="display:block;"><a onclick="alert('削除しました')" href="{{ route('delete' , $images->id ) }}">削除</a></button>
 </div>
 @endsection
