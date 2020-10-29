@@ -231,7 +231,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        //interventionImage(画像リサイズパケージ)　Facades設定
+        //interventionImage(画像リサイズパケージ)　Facades設定 今回はInterventionImage
+        //他のファサードと被るため
         'InterventionImage' => Intervention\Image\Facades\Image::class,
 
     ],

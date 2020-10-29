@@ -39,7 +39,7 @@
   });
   //ローディング非表示処理
 function endLoading(){
-  const tm = 3000;
+  const tm = 2000;
   const tm2 = 800;
   const spinner = document.getElementById('loading');
   // 1秒かけてロゴを非表示にし、その後0.8秒かけて背景を非表示にする
