@@ -69,8 +69,9 @@ class IndexController extends Controller
       if( isset( $request->file ) ){
         $image = $request->file;
         $inputImage = imageUploadServise::inputSelect($image);
-        list( $image_fileName , $data_url ) = $inputImage ;
-        InterventionImage::make($image)->resize( 300 , 300 )->save(storage_path() . '/app/public/images/' . $image_fileName);
+        list( $image_fileName , $data_url ) = $inputImage;
+        $request->file('file')->storeAs( '/public/images/' , $image_fileName );
+        //$resizeImage = InterventionImage::make($image)->resize( 300 , 300 )->save( storage_path(). '/app/public/images/' . $image_fileName );
         //webにupするときはこっち
         $images->file = $image_fileName;
         $images->file_path = $data_url;
@@ -151,7 +152,8 @@ class IndexController extends Controller
       $imageFile = $request->grandfather_img;
       $storelist = FileUploadServices::fileUpload($imageFile);
       list($fileNameToStore,$data_url) = $storelist;
-      InterventionImage::make($imageFile)->resize( 300 , 300 )->save(storage_path() . '/app/public/user/' . $fileNameToStore);
+      //ユーザーid_ファイル名.拡張子で保存
+      $request->file('grandfather_img')->storeAs('public/user', $fileNameToStore);
       //webにupするときはこっち
       $name->grandfather_img = $fileNameToStore;
       $name->grandfather_img_path = $data_url;
@@ -161,7 +163,8 @@ class IndexController extends Controller
       $imageFile =  $request->grandmother_img ;
       $storelist = FileUploadServices::fileUpload($imageFile);
       list($fileNameToStore,$data_url) = $storelist;
-      InterventionImage::make($imageFile)->resize( 300 , 300 )->save(storage_path() . '/app/public/user/' . $fileNameToStore);
+      //ユーザーid_ファイル名.拡張子で保存
+      $request->file('grandmother_img')->storeAs('public/user', $fileNameToStore);
       //webにupするときはこっち
       //$name->grandfather_img = $data_url;
       $name->grandmother_img_path = $data_url;
@@ -171,7 +174,8 @@ class IndexController extends Controller
       $imageFile =  $request->father_img ;
       $storelist = FileUploadServices::fileUpload($imageFile);
       list($fileNameToStore,$data_url) = $storelist;
-      InterventionImage::make($imageFile)->resize( 300 , 300 )->save(storage_path() . '/app/public/user/' . $fileNameToStore);
+      //ユーザーid_ファイル名.拡張子で保存
+      $request->file('father_img')->storeAs('public/user', $fileNameToStore);
       //webにupするときはこっち
       $name->father_img = $fileNameToStore;
       $name->father_img_path = $data_url;
@@ -181,7 +185,8 @@ class IndexController extends Controller
       $imageFile =  $request->mother_img;
       $storelist = FileUploadServices::fileUpload($imageFile);
       list($fileNameToStore,$data_url) = $storelist;
-      InterventionImage::make($imageFile)->resize( 300 , 300 )->save(storage_path() . '/app/public/user/' . $fileNameToStore);
+      //ユーザーid_ファイル名.拡張子で保存
+      $request->file('mother_img')->storeAs('public/user', $fileNameToStore);
       //webにupするときはこっち
       //$name->grandfather_img = $data_url;
       $name->mother_img_path = $fileNameToStore;
@@ -191,7 +196,8 @@ class IndexController extends Controller
       $imageFile =  $request->son_first_man_img;
       $storelist = FileUploadServices::fileUpload($imageFile);
       list($fileNameToStore,$data_url) = $storelist;
-      InterventionImage::make($imageFile)->resize( 300 , 300 )->save(storage_path() . '/app/public/user/' . $fileNameToStore);
+      //ユーザーid_ファイル名.拡張子で保存
+      $request->file('son_first_man_img')->storeAs('public/user', $fileNameToStore);
       //webにupするときはこっち
       $name->son_first_man_img = $fileNameToStore;
       $name->son_first_man_img_path = $data_url;
@@ -201,7 +207,8 @@ class IndexController extends Controller
       $imageFile =  $request->son_first_woman_img;
       $storelist = FileUploadServices::fileUpload($imageFile);
       list($fileNameToStore,$data_url) = $storelist;
-      InterventionImage::make($imageFile)->resize( 300 , 300 )->save(storage_path() . '/app/public/user/' . $fileNameToStore);
+      //ユーザーid_ファイル名.拡張子で保存
+      $request->file('son_first_woman_img')->storeAs('public/user', $fileNameToStore);
       //webにupするときはこっち
       $name->son_first_woman_img = $fileNameToStore;
       $name->son_first_woman_img_path = $data_url;
@@ -211,7 +218,8 @@ class IndexController extends Controller
       $imageFile =  $request->son_second_man_img;
       $storelist = FileUploadServices::fileUpload($imageFile);
       list($fileNameToStore,$data_url) = $storelist;
-      InterventionImage::make($imageFile)->resize( 300 , 300 )->save(storage_path() . '/app/public/user/' . $fileNameToStore);
+      //ユーザーid_ファイル名.拡張子で保存
+      $request->file('son_second_man_img')->storeAs('public/user', $fileNameToStore);
       //webにupするときはこっち
       $name->son_second_man_img = $fileNameToStore;
       $name->son_second_man_img_path = $data_url;
@@ -221,7 +229,8 @@ class IndexController extends Controller
       $imageFile =  $request->son_second_woman_img;
       $storelist = FileUploadServices::fileUpload($imageFile);
       list($fileNameToStore,$data_url) = $storelist;
-      InterventionImage::make($imageFile)->resize( 300 , 300 )->save(storage_path() . '/app/public/user/' . $fileNameToStore);
+      //ユーザーid_ファイル名.拡張子で保存
+      $request->file('son_second_woman_img')->storeAs('public/user', $fileNameToStore);
       //webにupするときはこっち
       $name->son_second_woman_img = $fileNameToStore;
       $name->son_second_woman_img_path = $data_url;
@@ -231,7 +240,8 @@ class IndexController extends Controller
       $imageFile =  $request->son_third_man_img;
       $storelist = FileUploadServices::fileUpload($imageFile);
       list($fileNameToStore,$data_url) = $storelist;
-      InterventionImage::make($imageFile)->resize( 300 , 300 )->save(storage_path() . '/app/public/user/' . $fileNameToStore);
+      //ユーザーid_ファイル名.拡張子で保存
+      $request->file('son_third_man_img')->storeAs('public/user', $fileNameToStore);
       //webにupするときはこっち
       $name->son_third_man_img = $fileNameToStore;
       $name->son_third_man_img_path = $data_url;
@@ -241,7 +251,8 @@ class IndexController extends Controller
       $imageFile =  $request->son_third_woman_img;
       $storelist = FileUploadServices::fileUpload($imageFile);
       list($fileNameToStore,$data_url) = $storelist;
-      InterventionImage::make($imageFile)->resize( 300 , 300 )->save(storage_path() . '/app/public/user/' . $fileNameToStore);
+      //ユーザーid_ファイル名.拡張子で保存
+      $request->file('son_third_woman_img')->storeAs('public/user', $fileNameToStore);
       //webにupするときはこっち
       $name->son_third_woman_img = $fileNameToStore;
       $name->son_third_woman_img_path = $data_url;
@@ -294,7 +305,8 @@ class IndexController extends Controller
       $imageFile = $request->grandfather_img;
       $storelist = FileCreateService::fileUpload($imageFile);
       list($fileNameToStore,$data_url) = $storelist;
-      InterventionImage::make($imageFile)->resize( 300 , 300 )->save(storage_path() . '/app/public/user/' . $fileNameToStore);
+      //ユーザーid_ファイル名.拡張子で保存
+      $request->file('grandfather_img')->storeAs('public/user', $fileNameToStore);
       //webにupするときはこっち
       $updata->grandfather_img = $fileNameToStore;
       $updata->grandfather_img_path = $data_url;
@@ -305,7 +317,8 @@ class IndexController extends Controller
       $imageFile =  $request->grandmother_img ;
       $storelist = FileCreateService::fileUpload($imageFile);
       list($fileNameToStore,$data_url) = $storelist;
-      InterventionImage::make($imageFile)->resize( 300 , 300 )->save(storage_path() . '/app/public/user/' . $fileNameToStore);
+      //ユーザーid_ファイル名.拡張子で保存
+      $request->file('grandmother_img')->storeAs('public/user', $fileNameToStore);
       //webにupするときはこっち
       $updata->grandmother_img = $fileNameToStore;
       $updata->grandmother_img_path = $data_url;
@@ -316,7 +329,8 @@ class IndexController extends Controller
       $imageFile =  $request->father_img ;
       $storelist = FileCreateService::fileUpload($imageFile);
       list($fileNameToStore,$data_url) = $storelist;
-      InterventionImage::make($imageFile)->resize( 300 , 300 )->save(storage_path() . '/app/public/user/' . $fileNameToStore);
+      //ユーザーid_ファイル名.拡張子で保存
+      $request->file('father_img')->storeAs('public/user', $fileNameToStore);
       //webにupするときはこっち
       $updata->father_img = $fileNameToStore;
       $updata->father_img_path = $data_url;
@@ -327,7 +341,8 @@ class IndexController extends Controller
       $imageFile =  $request->mother_img;
       $storelist = FileCreateService::fileUpload($imageFile);
       list($fileNameToStore,$data_url) = $storelist;
-      InterventionImage::make($imageFile)->resize( 300 , 300 )->save(storage_path() . '/app/public/user/' . $fileNameToStore);
+      //ユーザーid_ファイル名.拡張子で保存
+      $request->file('mother_img')->storeAs('public/user', $fileNameToStore);
       //webにupするときはこっち
       $updata->mother_img = $fileNameToStore;
       $updata->mother_img_path = $data_url;
@@ -338,7 +353,8 @@ class IndexController extends Controller
       $imageFile =  $request->son_first_man_img;
       $storelist = FileCreateService::fileUpload($imageFile);
       list($fileNameToStore,$data_url) = $storelist;
-      InterventionImage::make($imageFile)->resize( 300 , 300 )->save(storage_path() . '/app/public/user/' . $fileNameToStore);
+      //ユーザーid_ファイル名.拡張子で保存
+      $request->file('son_first_man_img')->storeAs('public/user', $fileNameToStore);
       //webにupするときはこっち
       $updata->son_first_man_img = $fileNameToStore;
       $updata->son_first_man_img_path = $data_url;
@@ -349,7 +365,8 @@ class IndexController extends Controller
       $imageFile =  $request->son_first_woman_img;
       $storelist = FileCreateService::fileUpload($imageFile);
       list($fileNameToStore,$data_url) = $storelist;
-      InterventionImage::make($imageFile)->resize( 300 , 300 )->save(storage_path() . '/app/public/user/' . $fileNameToStore);
+      //ユーザーid_ファイル名.拡張子で保存
+      $request->file('son_first_woman_img')->storeAs('public/user', $fileNameToStore);
       //webにupするときはこっち
       $updata->son_first_woman_img = $fileNameToStore;
       $updata->son_first_woman_img_path = $data_url;
@@ -360,7 +377,8 @@ class IndexController extends Controller
       $imageFile =  $request->son_second_man_img;
       $storelist = FileCreateService::fileUpload($imageFile);
       list($fileNameToStore,$data_url) = $storelist;
-      InterventionImage::make($imageFile)->resize( 300 , 300 )->save(storage_path() . '/app/public/user/' . $fileNameToStore);
+      //ユーザーid_ファイル名.拡張子で保存
+      $request->file('son_second_man_img')->storeAs('public/user', $fileNameToStore);
       //webにupするときはこっち
       $updata->son_second_man_img = $fileNameToStore;
       $updata->son_second_man_img_path = $data_url;
@@ -371,7 +389,8 @@ class IndexController extends Controller
       $imageFile =  $request->son_second_woman_img;
       $storelist = FileCreateService::fileUpload($imageFile);
       list($fileNameToStore,$data_url) = $storelist;
-      InterventionImage::make($imageFile)->resize( 300 , 300 )->save(storage_path() . '/app/public/user/' . $fileNameToStore);
+      //ユーザーid_ファイル名.拡張子で保存
+      $request->file('son_second_woman_img')->storeAs('public/user', $fileNameToStore);
       //webにupするときはこっち
       $updata->son_second_woman_img = $fileNameToStore;
       $updata->son_second_woman_img_path = $data_url;
@@ -381,7 +400,8 @@ class IndexController extends Controller
       Storage::disk('public')->delete('/user/' . $updata->son_third_man_img);
       $storelist = FileCreateService::fileUpload($imageFile);
       list($fileNameToStore,$data_url) = $storelist;
-      InterventionImage::make($imageFile)->resize( 300 , 300 )->save(storage_path() . '/app/public/user/' . $fileNameToStore);
+      //ユーザーid_ファイル名.拡張子で保存
+      $request->file('son_third_man_img')->storeAs('public/user', $fileNameToStore);
       //webにupするときはこっち
       $updata->son_third_man_img = $fileNameToStore;
       $updata->son_third_man_img_path = $data_url;
@@ -392,7 +412,8 @@ class IndexController extends Controller
       $imageFile =  $request->son_third_woman_img;
       $storelist = FileCreateService::fileUpload($imageFile);
       list($fileNameToStore,$data_url) = $storelist;
-      InterventionImage::make($imageFile)->resize( 300 , 300 )->save(storage_path() . '/app/public/user/' . $fileNameToStore);
+      //ユーザーid_ファイル名.拡張子で保存
+      $request->file('son_third_woman_img')->storeAs('public/user', $fileNameToStore);
       //webにupするときはこっち
       $updata->son_third_woman_img = $fileNameToStore;
       $updata->son_third_woman_img_path = $data_url;
@@ -429,7 +450,7 @@ class IndexController extends Controller
         //ファイル名.拡張子にする
         $userFileNameToStore = Auth::user()->id.'_'.Auth::user()->name.'_'.$userImageName.'.'.$userExtension;
         //ユーザーid_ファイル名.拡張子で保存
-        //$request->file('img_name')->storeAs('public/user_images', $userFileNameToStore);
+        $request->file('img_name')->storeAs('public/user_images', $userFileNameToStore);
         //画像ファイルを取得
         $userFileData = file_get_contents($userImageFile->getRealPath());
         if ($userExtension === 'jpg'){
@@ -444,7 +465,6 @@ class IndexController extends Controller
         if ($userExtension === 'gif'){
           $user_data_url = 'data:image/gif;base64,'. base64_encode($userFileData);
         }
-        InterventionImage::make($userImageFile)->resize( 300 , 300 )->save(storage_path() . '/app/public/user_images/' . $userFileNameToStore);
         //webにupするときはこっち
         $userimages->img_name = $userFileNameToStore;
         $userimages->img_name_path = $user_data_url;

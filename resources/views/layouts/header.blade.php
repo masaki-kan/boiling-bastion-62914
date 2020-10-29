@@ -43,12 +43,8 @@ function endLoading(){
   const tm2 = 800;
   const spinner = document.getElementById('loading');
   // 1秒かけてロゴを非表示にし、その後0.8秒かけて背景を非表示にする
-  $('#loading').fadeOut(tm, function(){
-    $('#loading').fadeOut(tm2);
-  });
+  $('#loading').fadeOut(tm);
 }
-
-
   </script>
     <div id="app">
 <header>
@@ -66,7 +62,7 @@ function endLoading(){
     <div class="">
         <div id="footer">
           <ul>
-            <li><a href="{{ route('home') }}"><i class="fas fa-images"></i><label >アルバム</label></a></li>
+            <li id="album"><a href="{{ route('home') }}"><i class="fas fa-images"></i><label >アルバム</label></a></li>
             @if( request()->url() === route('home') )
             <li><a href="">
               <!--現在のurlとコントローラーパラメーターを判定-->
